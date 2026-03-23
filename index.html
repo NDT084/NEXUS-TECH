@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEXUS LABS — Agence Web d'Élite · Dakar</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+  <!-- Fallback for Clash Display -->
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=cabinet-grotesk@300,400,500,700,800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- CANVAS BACKGROUND -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- NOISE OVERLAY -->
+<div class="noise"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="logo-bracket">[</span>NX<span class="logo-bracket">]</span>
+  </a>
+  <div class="nav-center">
+    <a href="index.html" class="nav-link active" data-text="Accueil">Accueil</a>
+    <a href="services.html" class="nav-link" data-text="Services">Services</a>
+    <a href="projets.html" class="nav-link" data-text="Projets">Projets</a>
+    <a href="contact.html" class="nav-link" data-text="Contact">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">
+    <span class="cta-dot"></span>
+    Démarrer →
+  </a>
+  <button class="burger" id="burger">
+    <div class="burger-lines">
+      <span></span><span></span><span></span>
+    </div>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <a href="index.html" class="mob-link">
+      <span class="mob-num">01.</span> Accueil
+    </a>
+    <a href="services.html" class="mob-link">
+      <span class="mob-num">02.</span> Services
+    </a>
+    <a href="contact.html" class="mob-link">
+      <span class="mob-num">03.</span> Contact
+    </a>
+    <a href="contact.html" class="mob-cta">Démarrer un projet →</a>
+    <div class="mob-footer">
+      <span class="mono-sm">hello@nexuslabs.tech</span>
+      <span class="mono-sm">+221 77 000 00 00</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-code-bg" id="codeBg"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag reveal">
+      <span class="tag-dot"></span>
+      <span class="mono-sm">v3.0.1 — Dakar, Sénégal</span>
+      <span class="tag-status">● Online</span>
+    </div>
+
+    <div class="glitch-wrapper reveal delay-1">
+      <h1 class="hero-title" data-text="Nous codons">Nous codons</h1>
+      <h1 class="hero-title accent-line" data-text="l'avenir digital">l'avenir digital</h1>
+      <h1 class="hero-title" data-text="de l'Afrique.">de l'Afrique.</h1>
+    </div>
+
+    <p class="hero-sub reveal delay-2">
+      Sites web haute performance · E-commerce · Apps sur-mesure<br/>
+      <span class="mono-sm typed-text" id="typedText"></span>
+    </p>
+
+    <div class="hero-actions reveal delay-3">
+      <a href="services.html" class="btn btn-primary">
+        <span>Explorer nos services</span>
+        <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </a>
+      <a href="contact.html" class="btn btn-outline">
+        <span>Parler à l'équipe</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-terminal reveal delay-4">
+    <div class="terminal">
+      <div class="term-bar">
+        <span class="term-dot red"></span>
+        <span class="term-dot yellow"></span>
+        <span class="term-dot green"></span>
+        <span class="term-title mono-sm">nexus@terminal ~ </span>
+      </div>
+      <div class="term-body" id="termBody">
+        <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">nexus init --project="votre-site"</span></div>
+        <div class="term-line out"><span class="c-green">✓</span> Analyse des besoins...</div>
+        <div class="term-line out"><span class="c-green">✓</span> Design system loaded</div>
+        <div class="term-line out"><span class="c-cyan">→</span> Building components... <span class="c-yellow">████████░░ 80%</span></div>
+        <div class="term-line out blink-line"><span class="c-green">✓</span> Votre site est prêt. <span class="term-blink">_</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-metrics reveal delay-4">
+    <div class="metric-pill">
+      <span class="mpill-n c-green">50+</span>
+      <span class="mpill-l">Projets</span>
+    </div>
+    <div class="metric-sep">/</div>
+    <div class="metric-pill">
+      <span class="mpill-n c-cyan">98%</span>
+      <span class="mpill-l">Satisfaits</span>
+    </div>
+    <div class="metric-sep">/</div>
+    <div class="metric-pill">
+      <span class="mpill-n c-violet">5 ans</span>
+      <span class="mpill-l">Expérience</span>
+    </div>
+    <div class="metric-sep">/</div>
+    <div class="metric-pill">
+      <span class="mpill-n c-green">24h</span>
+      <span class="mpill-l">Réponse</span>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span class="mono-sm">scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Sites Web</span><span class="sep">◆</span>
+    <span>E-Commerce</span><span class="sep">◆</span>
+    <span>Applications Web</span><span class="sep">◆</span>
+    <span>SEO & Marketing</span><span class="sep">◆</span>
+    <span>UI/UX Design</span><span class="sep">◆</span>
+    <span>Branding Digital</span><span class="sep">◆</span>
+    <span>Performance Web</span><span class="sep">◆</span>
+    <span>Sites Web</span><span class="sep">◆</span>
+    <span>E-Commerce</span><span class="sep">◆</span>
+    <span>Applications Web</span><span class="sep">◆</span>
+    <span>SEO & Marketing</span><span class="sep">◆</span>
+    <span>UI/UX Design</span><span class="sep">◆</span>
+    <span>Branding Digital</span><span class="sep">◆</span>
+    <span>Performance Web</span><span class="sep">◆</span>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">
+        <span class="mono-sm c-green">// 01.</span>
+        <span>Ce que nous faisons</span>
+      </div>
+      <h2 class="section-title reveal delay-1">
+        Des solutions digitales<br/><em>qui performent.</em>
+      </h2>
+    </div>
+
+    <div class="srv-grid">
+      <div class="srv-card reveal" data-index="01">
+        <div class="srv-top">
+          <div class="srv-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="10" width="40" height="28" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M17 28l-4-4 4-4M31 20l4 4-4 4M22 30l4-12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="srv-num mono-sm">01</span>
+        </div>
+        <h3>Sites Vitrine</h3>
+        <p>Présences web élégantes, rapides et optimisées qui capturent l'essence de votre marque et convertissent chaque visiteur.</p>
+        <div class="srv-tags">
+          <span>React</span><span>Next.js</span><span>SEO</span>
+        </div>
+        <a href="services.html" class="srv-link">Voir le service <span>→</span></a>
+      </div>
+
+      <div class="srv-card reveal delay-1" data-index="02">
+        <div class="srv-top">
+          <div class="srv-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M8 12h32v28H8z" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M16 20h16M16 26h10M32 32H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="35" cy="16" r="8" fill="var(--bg)" stroke="currentColor" stroke-width="1.8"/><path d="M32 16l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span class="srv-num mono-sm">02</span>
+        </div>
+        <h3>E-Commerce</h3>
+        <p>Boutiques en ligne haute conversion avec Wave, Orange Money, gestion stocks et dashboard vendeur en temps réel.</p>
+        <div class="srv-tags">
+          <span>WooCommerce</span><span>Wave Pay</span><span>API</span>
+        </div>
+        <a href="services.html" class="srv-link">Voir le service <span>→</span></a>
+      </div>
+
+      <div class="srv-card reveal delay-2" data-index="03">
+        <div class="srv-top">
+          <div class="srv-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="4" width="28" height="40" rx="5" stroke="currentColor" stroke-width="1.8"/><path d="M18 14h12M18 20h8M20 34l4-8 4 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span class="srv-num mono-sm">03</span>
+        </div>
+        <h3>Applications Web</h3>
+        <p>Plateformes sur-mesure, dashboards temps réel, systèmes de gestion complexes — architecturés pour durer et scaler.</p>
+        <div class="srv-tags">
+          <span>Node.js</span><span>PostgreSQL</span><span>Docker</span>
+        </div>
+        <a href="services.html" class="srv-link">Voir le service <span>→</span></a>
+      </div>
+
+      <div class="srv-card reveal delay-3" data-index="04">
+        <div class="srv-top">
+          <div class="srv-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 6l3 9h9l-7.5 5.5 3 9L24 24l-7.5 5.5 3-9L12 15h9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 38h32M12 44h24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <span class="srv-num mono-sm">04</span>
+        </div>
+        <h3>SEO & Marketing</h3>
+        <p>Stratégie de visibilité complète : référencement naturel, Google Ads, Meta Ads, analytics — mesuré et optimisé en continu.</p>
+        <div class="srv-tags">
+          <span>Google Ads</span><span>Analytics</span><span>Content</span>
+        </div>
+        <a href="services.html" class="srv-link">Voir le service <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS BAND ===== -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-block reveal">
+        <div class="stat-num" data-count="50" data-suffix="+">0+</div>
+        <div class="stat-lbl">Projets livrés avec succès</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-block reveal delay-1">
+        <div class="stat-num" data-count="98" data-suffix="%">0%</div>
+        <div class="stat-lbl">Taux de satisfaction client</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-block reveal delay-2">
+        <div class="stat-num" data-count="5" data-suffix=" ans">0 ans</div>
+        <div class="stat-lbl">D'expertise technique</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-block reveal delay-3">
+        <div class="stat-num" data-count="3" data-suffix="x">0x</div>
+        <div class="stat-lbl">Performance vs concurrents</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROCESS ===== -->
+<section class="section process">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">
+        <span class="mono-sm c-cyan">// 02.</span>
+        <span>Notre processus</span>
+      </div>
+      <h2 class="section-title reveal delay-1">
+        De l'idée au <em>déploiement.</em>
+      </h2>
+    </div>
+
+    <div class="process-timeline">
+      <div class="process-line"></div>
+      <div class="proc-step reveal">
+        <div class="proc-num">01</div>
+        <div class="proc-card">
+          <span class="proc-tag mono-sm">Discovery</span>
+          <h4>Analyse & Stratégie</h4>
+          <p>Audit de votre secteur, définition des objectifs, architecture de l'information et choix technologique.</p>
+        </div>
+      </div>
+      <div class="proc-step reveal delay-1">
+        <div class="proc-num">02</div>
+        <div class="proc-card">
+          <span class="proc-tag mono-sm">Design</span>
+          <h4>Maquettes UI/UX</h4>
+          <p>Wireframes, prototypes interactifs et design system complet. Vous validez chaque pixel avant le code.</p>
+        </div>
+      </div>
+      <div class="proc-step reveal delay-2">
+        <div class="proc-num">03</div>
+        <div class="proc-card">
+          <span class="proc-tag mono-sm">Build</span>
+          <h4>Développement</h4>
+          <p>Code propre, documenté et testé. CI/CD, optimisation performances, accessibilité et SEO technique.</p>
+        </div>
+      </div>
+      <div class="proc-step reveal delay-3">
+        <div class="proc-num">04</div>
+        <div class="proc-card">
+          <span class="proc-tag mono-sm">Deploy</span>
+          <h4>Lancement & Suivi</h4>
+          <p>Mise en production, monitoring, formation et support. Votre site est surveillé 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section testi-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label reveal">
+        <span class="mono-sm c-violet">// 03.</span>
+        <span>Témoignages</span>
+      </div>
+      <h2 class="section-title reveal delay-1">Ils ont choisi <em>Nexus.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p>Notre boutique en ligne a triplé son CA en 4 mois. L'intégration Wave Pay a été parfaite et le dashboard vendeur est vraiment intuitif.</p>
+        <div class="testi-meta">
+          <div class="testi-av" style="--av-color:#00ff88">AM</div>
+          <div>
+            <strong>Aminata Mbaye</strong>
+            <span>Fondatrice · Boutique Teranga</span>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-card reveal delay-1">
+        <div class="testi-quote">"</div>
+        <p>Livraison en 3 semaines chrono, code clean et site ultra-rapide. L'équipe Nexus connaît vraiment son métier. Je les recommande sans hésiter.</p>
+        <div class="testi-meta">
+          <div class="testi-av" style="--av-color:#7c6af7">OD</div>
+          <div>
+            <strong>Ousmane Diop</strong>
+            <span>DG · TechBuild Sénégal</span>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="testi-card reveal delay-2">
+        <div class="testi-quote">"</div>
+        <p>Notre trafic a explosé après la refonte SEO. Le site est magnifique sur mobile. Nexus, c'est la référence pour le web au Sénégal.</p>
+        <div class="testi-meta">
+          <div class="testi-av" style="--av-color:#00cfff">FN</div>
+          <div>
+            <strong>Fatou Niang</strong>
+            <span>CEO · Prestige Immobilier</span>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TECH STACK ===== -->
+<section class="section tech-section">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-label reveal">
+        <span class="mono-sm c-green">// stack</span>
+        <span>Technologies maîtrisées</span>
+      </div>
+      <h2 class="section-title reveal delay-1">Nos outils, <em>votre avantage.</em></h2>
+    </div>
+    <div class="tech-grid reveal delay-2">
+      <div class="tech-item">React</div>
+      <div class="tech-item">Next.js</div>
+      <div class="tech-item">Node.js</div>
+      <div class="tech-item">TypeScript</div>
+      <div class="tech-item">PostgreSQL</div>
+      <div class="tech-item">Docker</div>
+      <div class="tech-item">WordPress</div>
+      <div class="tech-item">WooCommerce</div>
+      <div class="tech-item">Figma</div>
+      <div class="tech-item">AWS</div>
+      <div class="tech-item">Vercel</div>
+      <div class="tech-item">Git/CI-CD</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="cta-tag mono-sm">
+        <span class="cta-dot pulsing"></span> Disponible pour nouveaux projets
+      </div>
+      <h2>Prêt à construire<br/><em>quelque chose d'exceptionnel ?</em></h2>
+      <p>Consultation gratuite · Réponse en 24h · Sans engagement</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">
+          <span>Démarrer le projet</span>
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </a>
+        <a href="mailto:hello@nexuslabs.tech" class="btn btn-outline btn-lg">
+          hello@nexuslabs.tech
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="foot-logo">
+          <span class="logo-bracket">[</span>NX<span class="logo-bracket">]</span>
+        </div>
+        <p>Agence web d'élite à Dakar.<br/>On construit l'Afrique digitale,<br/>une ligne de code à la fois.</p>
+        <div class="foot-badge mono-sm">
+          <span class="c-green">●</span> Systèmes opérationnels
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="foot-label mono-sm">Navigation</div>
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="foot-label mono-sm">Services</div>
+        <a href="services.html">Sites vitrine</a>
+        <a href="services.html">E-commerce</a>
+        <a href="services.html">Apps web</a>
+        <a href="services.html">SEO & Marketing</a>
+      </div>
+      <div class="footer-col">
+        <div class="foot-label mono-sm">Contact</div>
+        <a href="mailto:hello@nexuslabs.tech">hello@nexuslabs.tech</a>
+        <a href="tel:+221770000000">+221 77 000 00 00</a>
+        <a href="#">WhatsApp</a>
+        <span>Dakar, Sénégal 🇸🇳</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="mono-sm">© 2026 NEXUS LABS. All rights reserved.</span>
+      <span class="mono-sm c-green">Built in Dakar with ♥ &amp; coffee</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

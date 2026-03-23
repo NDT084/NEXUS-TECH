@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services — NEXUS LABS · Agence Web Dakar</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=cabinet-grotesk@300,400,500,700,800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+<canvas id="bgCanvas"></canvas>
+<div class="noise"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="logo-bracket">[</span>NX<span class="logo-bracket">]</span>
+  </a>
+  <div class="nav-center">
+    <a href="index.html" class="nav-link" data-text="Accueil">Accueil</a>
+    <a href="services.html" class="nav-link active" data-text="Services">Services</a>
+    <a href="projets.html" class="nav-link" data-text="Projets">Projets</a>
+    <a href="contact.html" class="nav-link" data-text="Contact">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">
+    <span class="cta-dot"></span>Démarrer →
+  </a>
+  <button class="burger" id="burger">
+    <div class="burger-lines"><span></span><span></span><span></span></div>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <a href="index.html" class="mob-link"><span class="mob-num">01.</span> Accueil</a>
+    <a href="services.html" class="mob-link"><span class="mob-num">02.</span> Services</a>
+    <a href="projets.html" class="mob-link"><span class="mob-num">03.</span> Projets</a>
+    <a href="contact.html" class="mob-link"><span class="mob-num">04.</span> Contact</a>
+    <a href="contact.html" class="mob-cta">Démarrer un projet →</a>
+    <div class="mob-footer">
+      <span class="mono-sm">hello@nexuslabs.tech</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="ph-content">
+      <div class="section-label reveal">
+        <span class="mono-sm c-green">// services</span>
+        <span>Ce que nous livrons</span>
+      </div>
+      <h1 class="reveal delay-1">
+        Chaque service,<br/><em>une expertise.</em>
+      </h1>
+      <p class="ph-sub reveal delay-2">
+        Des solutions techniques de premier niveau, pensées pour le marché africain et optimisées pour la performance mondiale.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES DÉTAIL -->
+<section class="section">
+  <div class="container">
+
+    <!-- VITRINE -->
+    <div class="srv-detail reveal">
+      <div class="srv-detail-header">
+        <div class="srv-detail-num mono-sm c-green">01 / 04</div>
+        <span class="srv-badge">Site Vitrine</span>
+      </div>
+      <div class="srv-detail-body">
+        <div class="srv-detail-left">
+          <h2>Votre identité,<br/><em>sublimée en pixels.</em></h2>
+          <p>Un site vitrine n'est pas qu'une page web — c'est votre premier commercial, disponible 24/7. On construit des expériences visuelles qui marquent les esprits et transforment les visiteurs en clients.</p>
+          <div class="srv-features">
+            <div class="srv-feat"><span class="feat-icon c-green">▸</span> Design 100% personnalisé</div>
+            <div class="srv-feat"><span class="feat-icon c-green">▸</span> Responsive parfait tous écrans</div>
+            <div class="srv-feat"><span class="feat-icon c-green">▸</span> PageSpeed Score &gt; 90/100</div>
+            <div class="srv-feat"><span class="feat-icon c-green">▸</span> CMS pour éditer vous-même</div>
+            <div class="srv-feat"><span class="feat-icon c-green">▸</span> SEO on-page inclus</div>
+            <div class="srv-feat"><span class="feat-icon c-green">▸</span> Formulaires & intégrations</div>
+          </div>
+          <div class="srv-price-row">
+            <div class="price-tag">
+              <span class="mono-sm c-green">à partir de</span>
+              <strong>250 000 FCFA</strong>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Demander un devis →</a>
+          </div>
+        </div>
+        <div class="srv-detail-right">
+          <div class="code-block">
+            <div class="code-header">
+              <span class="cb-dot red"></span>
+              <span class="cb-dot yellow"></span>
+              <span class="cb-dot green"></span>
+              <span class="mono-sm">vitrine.config.js</span>
+            </div>
+            <pre class="code-content"><code><span class="c-violet">const</span> <span class="c-cyan">project</span> = {
+  type: <span class="c-green">'vitrine'</span>,
+  pages: <span class="c-yellow">5</span>,
+  responsive: <span class="c-green">true</span>,
+  performance: <span class="c-green">'A+'</span>,
+  seo: <span class="c-green">'optimized'</span>,
+  cms: <span class="c-green">'included'</span>,
+  delivery: <span class="c-yellow">14</span> <span class="c-text2">// jours</span>
+}
+
+<span class="c-violet">export default</span> project;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="srv-divider"></div>
+
+    <!-- ECOMMERCE -->
+    <div class="srv-detail reveal">
+      <div class="srv-detail-header">
+        <div class="srv-detail-num mono-sm c-cyan">02 / 04</div>
+        <span class="srv-badge" style="--badge-color:var(--cyan)">E-Commerce</span>
+      </div>
+      <div class="srv-detail-body reverse">
+        <div class="srv-detail-right">
+          <div class="code-block">
+            <div class="code-header">
+              <span class="cb-dot red"></span><span class="cb-dot yellow"></span><span class="cb-dot green"></span>
+              <span class="mono-sm">payments.ts</span>
+            </div>
+            <pre class="code-content"><code><span class="c-violet">const</span> <span class="c-cyan">payments</span> = [
+  { provider: <span class="c-green">'Wave'</span>, status: <span class="c-green">✓</span> },
+  { provider: <span class="c-green">'Orange Money'</span>, status: <span class="c-green">✓</span> },
+  { provider: <span class="c-green">'Free Money'</span>, status: <span class="c-green">✓</span> },
+  { provider: <span class="c-green">'Carte Bancaire'</span>, status: <span class="c-green">✓</span> }
+]
+
+<span class="c-violet">await</span> <span class="c-cyan">checkout</span>.process({
+  cart, payments,
+  notify: [<span class="c-green">'sms'</span>, <span class="c-green">'email'</span>]
+})</code></pre>
+          </div>
+        </div>
+        <div class="srv-detail-left">
+          <h2>Vendez en ligne,<br/><em>sans friction.</em></h2>
+          <p>Votre boutique e-commerce intégrée nativement avec les solutions de paiement mobile africaines. Dashboard temps réel, gestion des stocks automatisée, notifications client — tout est géré.</p>
+          <div class="srv-features">
+            <div class="srv-feat"><span class="feat-icon c-cyan">▸</span> Wave, Orange Money, Free Money</div>
+            <div class="srv-feat"><span class="feat-icon c-cyan">▸</span> Dashboard vendeur temps réel</div>
+            <div class="srv-feat"><span class="feat-icon c-cyan">▸</span> Gestion stocks automatisée</div>
+            <div class="srv-feat"><span class="feat-icon c-cyan">▸</span> Notifications SMS & email</div>
+            <div class="srv-feat"><span class="feat-icon c-cyan">▸</span> Catalogue illimité + variantes</div>
+            <div class="srv-feat"><span class="feat-icon c-cyan">▸</span> Rapports & analytics intégrés</div>
+          </div>
+          <div class="srv-price-row">
+            <div class="price-tag">
+              <span class="mono-sm c-cyan">à partir de</span>
+              <strong>450 000 FCFA</strong>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Demander un devis →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="srv-divider"></div>
+
+    <!-- APP WEB -->
+    <div class="srv-detail reveal">
+      <div class="srv-detail-header">
+        <div class="srv-detail-num mono-sm c-violet">03 / 04</div>
+        <span class="srv-badge" style="--badge-color:var(--violet)">Application Web</span>
+      </div>
+      <div class="srv-detail-body">
+        <div class="srv-detail-left">
+          <h2>Des systèmes<br/><em>qui scalent.</em></h2>
+          <p>Votre process métier mérite un outil taillé sur-mesure. On architecture et développe des applications web robustes : plateformes SaaS, systèmes de réservation, outils collaboratifs, dashboards analytics.</p>
+          <div class="srv-features">
+            <div class="srv-feat"><span class="feat-icon c-violet">▸</span> Architecture microservices</div>
+            <div class="srv-feat"><span class="feat-icon c-violet">▸</span> API REST ou GraphQL</div>
+            <div class="srv-feat"><span class="feat-icon c-violet">▸</span> Auth & rôles utilisateurs</div>
+            <div class="srv-feat"><span class="feat-icon c-violet">▸</span> Temps réel (WebSockets)</div>
+            <div class="srv-feat"><span class="feat-icon c-violet">▸</span> Hébergement cloud managé</div>
+            <div class="srv-feat"><span class="feat-icon c-violet">▸</span> CI/CD & monitoring 24/7</div>
+          </div>
+          <div class="srv-price-row">
+            <div class="price-tag">
+              <span class="mono-sm c-violet">sur devis</span>
+              <strong>à partir de 750 000 FCFA</strong>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Discuter du projet →</a>
+          </div>
+        </div>
+        <div class="srv-detail-right">
+          <div class="code-block">
+            <div class="code-header">
+              <span class="cb-dot red"></span><span class="cb-dot yellow"></span><span class="cb-dot green"></span>
+              <span class="mono-sm">api.routes.ts</span>
+            </div>
+            <pre class="code-content"><code><span class="c-violet">router</span>
+  .get(<span class="c-green">'/dashboard'</span>, auth, stats)
+  .post(<span class="c-green">'/orders'</span>, validate, create)
+  .put(<span class="c-green">'/users/:id'</span>, auth, update)
+  .ws(<span class="c-green">'/realtime'</span>, socket.handle)
+
+<span class="c-text2">// Deploy to production</span>
+<span class="c-cyan">docker</span> build -t nexus-app .
+<span class="c-cyan">kubectl</span> apply -f deploy.yaml
+<span class="c-green">✓ App running on port 443</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="srv-divider"></div>
+
+    <!-- SEO -->
+    <div class="srv-detail reveal">
+      <div class="srv-detail-header">
+        <div class="srv-detail-num mono-sm" style="color:var(--yellow)">04 / 04</div>
+        <span class="srv-badge" style="--badge-color:var(--yellow)">SEO & Marketing</span>
+      </div>
+      <div class="srv-detail-body reverse">
+        <div class="srv-detail-right">
+          <div class="code-block">
+            <div class="code-header">
+              <span class="cb-dot red"></span><span class="cb-dot yellow"></span><span class="cb-dot green"></span>
+              <span class="mono-sm">seo.audit.json</span>
+            </div>
+            <pre class="code-content"><code>{
+  <span class="c-cyan">"performance"</span>: <span class="c-green">97</span>,
+  <span class="c-cyan">"accessibility"</span>: <span class="c-green">100</span>,
+  <span class="c-cyan">"best_practices"</span>: <span class="c-green">95</span>,
+  <span class="c-cyan">"seo"</span>: <span class="c-green">100</span>,
+  <span class="c-cyan">"keywords_ranked"</span>: <span class="c-yellow">48</span>,
+  <span class="c-cyan">"traffic_growth"</span>: <span class="c-green">"+320%"</span>,
+  <span class="c-cyan">"status"</span>: <span class="c-green">"✓ crushing it"</span>
+}</code></pre>
+          </div>
+        </div>
+        <div class="srv-detail-left">
+          <h2>Soyez trouvé.<br/><em>Toujours premier.</em></h2>
+          <p>Un site invisible ne sert à rien. Notre stratégie SEO technique et marketing digital place vos contenus en première position sur Google et attire vos clients idéaux en continu.</p>
+          <div class="srv-features">
+            <div class="srv-feat"><span class="feat-icon" style="color:var(--yellow)">▸</span> Audit SEO technique complet</div>
+            <div class="srv-feat"><span class="feat-icon" style="color:var(--yellow)">▸</span> Core Web Vitals optimisés</div>
+            <div class="srv-feat"><span class="feat-icon" style="color:var(--yellow)">▸</span> Google Ads & Meta Ads</div>
+            <div class="srv-feat"><span class="feat-icon" style="color:var(--yellow)">▸</span> Stratégie de contenu</div>
+            <div class="srv-feat"><span class="feat-icon" style="color:var(--yellow)">▸</span> Rapport mensuel détaillé</div>
+            <div class="srv-feat"><span class="feat-icon" style="color:var(--yellow)">▸</span> Community management</div>
+          </div>
+          <div class="srv-price-row">
+            <div class="price-tag">
+              <span class="mono-sm" style="color:var(--yellow)">à partir de</span>
+              <strong>75 000 FCFA/mois</strong>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Demander un devis →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORFAITS -->
+<section class="section plans-section">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-label reveal">
+        <span class="mono-sm c-green">// pricing</span>
+        <span>Forfaits transparents</span>
+      </div>
+      <h2 class="section-title reveal delay-1">Pas de surprises,<br/><em>juste des résultats.</em></h2>
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan-card reveal">
+        <div class="plan-tier mono-sm">Starter</div>
+        <div class="plan-amount">250 000<span> FCFA</span></div>
+        <p class="plan-desc">Idéal pour lancer votre présence digitale</p>
+        <ul class="plan-list">
+          <li class="ok">Jusqu'à 5 pages</li>
+          <li class="ok">Design personnalisé</li>
+          <li class="ok">Responsive mobile</li>
+          <li class="ok">SEO de base</li>
+          <li class="ok">1 mois de support</li>
+          <li class="no">E-commerce</li>
+          <li class="no">Blog intégré</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline btn-full">Choisir Starter</a>
+      </div>
+
+      <div class="plan-card plan-hot reveal delay-1">
+        <div class="plan-badge-top mono-sm">⚡ Le plus populaire</div>
+        <div class="plan-tier mono-sm c-green">Pro</div>
+        <div class="plan-amount">450 000<span> FCFA</span></div>
+        <p class="plan-desc">Pour les entreprises ambitieuses</p>
+        <ul class="plan-list">
+          <li class="ok">Pages illimitées</li>
+          <li class="ok">Design premium</li>
+          <li class="ok">Blog + CMS avancé</li>
+          <li class="ok">SEO avancé</li>
+          <li class="ok">3 mois de support</li>
+          <li class="ok">E-commerce 50 produits</li>
+          <li class="no">Application sur-mesure</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary btn-full">Choisir Pro</a>
+      </div>
+
+      <div class="plan-card reveal delay-2">
+        <div class="plan-tier mono-sm" style="color:var(--violet)">Business</div>
+        <div class="plan-amount">Sur devis</div>
+        <p class="plan-desc">Solution complète & personnalisée</p>
+        <ul class="plan-list">
+          <li class="ok">Tout du forfait Pro</li>
+          <li class="ok">E-commerce illimité</li>
+          <li class="ok">Application sur-mesure</li>
+          <li class="ok">Intégrations API</li>
+          <li class="ok">12 mois de support</li>
+          <li class="ok">Formation incluse</li>
+          <li class="ok">Campagnes marketing</li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline btn-full">Discuter du projet</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="cta-tag mono-sm"><span class="cta-dot pulsing"></span> Disponible pour nouveaux projets</div>
+      <h2>Une question sur<br/><em>nos services ?</em></h2>
+      <p>On répond dans les 24h. Consultation gratuite.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">Nous contacter <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="foot-logo"><span class="logo-bracket">[</span>NX<span class="logo-bracket">]</span></div>
+        <p>Agence web d'élite à Dakar.<br/>On construit l'Afrique digitale,<br/>une ligne de code à la fois.</p>
+        <div class="foot-badge mono-sm"><span class="c-green">●</span> Systèmes opérationnels</div>
+      </div>
+      <div class="footer-col">
+        <div class="foot-label mono-sm">Navigation</div>
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="foot-label mono-sm">Services</div>
+        <a href="services.html">Sites vitrine</a>
+        <a href="services.html">E-commerce</a>
+        <a href="services.html">Apps web</a>
+        <a href="services.html">SEO & Marketing</a>
+      </div>
+      <div class="footer-col">
+        <div class="foot-label mono-sm">Contact</div>
+        <a href="mailto:hello@nexuslabs.tech">hello@nexuslabs.tech</a>
+        <a href="tel:+221770000000">+221 77 000 00 00</a>
+        <span>Dakar, Sénégal 🇸🇳</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="mono-sm">© 2026 NEXUS LABS. All rights reserved.</span>
+      <span class="mono-sm c-green">Built in Dakar with ♥ &amp; coffee</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
